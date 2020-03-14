@@ -1,0 +1,2 @@
+#NeteaseCloudGoApi
+go版本网易云音乐api
