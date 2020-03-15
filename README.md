@@ -166,3 +166,4 @@ $ go run app.go
 ## License
 
 [The MIT License (MIT)](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)
+
