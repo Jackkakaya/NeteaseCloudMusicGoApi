@@ -1,7 +1,7 @@
 package models
 
 import (
-	"NeteaseCloudGoApi/pkg/request"
+	"NeteaseCloudMusicGoApi/pkg/request"
 )
 // 24小时榜单
 func (m *MusicObain)DjProgramToplistHours(query map[string]interface{}) map[string]interface{}  {

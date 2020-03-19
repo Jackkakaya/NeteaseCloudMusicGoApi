@@ -1,6 +1,6 @@
 package models
 
-import "NeteaseCloudGoApi/pkg/request"
+import "NeteaseCloudMusicGoApi/pkg/request"
 //歌手mv
 func (m *MusicObain)ArtistMv(query map[string]interface{}) map[string]interface{}  {
 	data := map[string]interface{} {

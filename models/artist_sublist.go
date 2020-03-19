@@ -1,6 +1,6 @@
 package models
 
-import "NeteaseCloudGoApi/pkg/request"
+import "NeteaseCloudMusicGoApi/pkg/request"
 
 // 关注歌手列表
 // todo 待测试

@@ -1,7 +1,7 @@
 package request
 
 import (
-	"NeteaseCloudGoApi/pkg/crypto"
+	"NeteaseCloudMusicGoApi/pkg/crypto"
 	"archive/zip"
 	"bytes"
 	"encoding/json"

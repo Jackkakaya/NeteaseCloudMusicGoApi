@@ -1,7 +1,7 @@
 package models
 
 import (
-	"NeteaseCloudGoApi/pkg/request"
+	"NeteaseCloudMusicGoApi/pkg/request"
 )
 
 func (m *MusicObain)DjPaygift(query map[string]interface{}) map[string]interface{}  {

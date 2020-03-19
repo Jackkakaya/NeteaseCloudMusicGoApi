@@ -1,7 +1,7 @@
 package main
 
 import (
-	"NeteaseCloudGoApi/models"
+	"NeteaseCloudMusicGoApi/models"
 	"encoding/json"
 	"fmt"
 	"github.com/gin-contrib/cache"

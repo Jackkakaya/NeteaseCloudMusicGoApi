@@ -1,6 +1,6 @@
 package models
 // 已收藏专辑列表
-import "NeteaseCloudGoApi/pkg/request"
+import "NeteaseCloudMusicGoApi/pkg/request"
 
 func (m *MusicObain)AlbumSublist(query map[string]interface{}) map[string]interface{}  {
 	data := map[string]interface{} {

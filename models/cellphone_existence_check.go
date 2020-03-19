@@ -1,6 +1,6 @@
 package models
 
-import "NeteaseCloudGoApi/pkg/request"
+import "NeteaseCloudMusicGoApi/pkg/request"
 
 func (m *MusicObain)CellphoneExistenceCheck(query map[string]interface{}) map[string]interface{}  {
 	data := map[string]interface{} {

@@ -1,7 +1,7 @@
 package models
 
 import (
-	"NeteaseCloudGoApi/pkg/request"
+	"NeteaseCloudMusicGoApi/pkg/request"
 )
 
 // 歌手热门50首

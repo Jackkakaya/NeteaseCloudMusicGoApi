@@ -1,8 +1,8 @@
 package models
 
 import (
-	"NeteaseCloudGoApi/pkg/crypto"
-	"NeteaseCloudGoApi/pkg/request"
+	"NeteaseCloudMusicGoApi/pkg/crypto"
+	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
 	"reflect"
 )

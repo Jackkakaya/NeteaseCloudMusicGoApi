@@ -1,8 +1,8 @@
 package models
 
 import (
-	neteasePkg "NeteaseCloudGoApi/pkg"
-	"NeteaseCloudGoApi/pkg/request"
+	neteasePkg "NeteaseCloudMusicGoApi/pkg"
+	"NeteaseCloudMusicGoApi/pkg/request"
 	"regexp"
 )
 
