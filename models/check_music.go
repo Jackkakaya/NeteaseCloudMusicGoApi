@@ -1,12 +1,13 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
 	"strconv"
+
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
 
-func (m *MusicObain)CheckMusic(query map[string]interface{}) map[string]interface{} {
+func (m *MusicObain) CheckMusic(query map[string]interface{}) map[string]interface{} {
 	data := map[string]interface{}{}
 	if val, err := strconv.Atoi(fmt.Sprintf("%v", query["id"])); err == nil {
 		data["ids"] = fmt.Sprintf("[%v]", val)

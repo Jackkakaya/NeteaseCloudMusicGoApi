@@ -1,23 +1,23 @@
 package models
 
-import "NeteaseCloudMusicGoApi/pkg/request"
+import "github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 
-func (m *MusicObain)CaptchaSent(query map[string]interface{}) map[string]interface{}  {
-	data := map[string]interface{} {
-		"cellphone" : query["phone"],
+func (m *MusicObain) CaptchaSent(query map[string]interface{}) map[string]interface{} {
+	data := map[string]interface{}{
+		"cellphone": query["phone"],
 	}
-	if val,ok := query["ctcode"];ok{
+	if val, ok := query["ctcode"]; ok {
 		data["ctcode"] = val
-	}else {
+	} else {
 		data["ctcode"] = "86"
 	}
 	options := map[string]interface{}{
 		"crypto": "weapi",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 	return request.CreateRequest(
-		"POST","https://music.163.com/weapi/sms/captcha/sent",
+		"POST", "https://music.163.com/weapi/sms/captcha/sent",
 		data,
 		options)
 }

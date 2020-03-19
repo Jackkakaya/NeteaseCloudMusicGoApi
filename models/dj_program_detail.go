@@ -1,20 +1,20 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/request"
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
 
-func (m *MusicObain)DjProgramDetail(query map[string]interface{}) map[string]interface{}  {
-	data := map[string]interface{} {
-		"id":query["id"],
+func (m *MusicObain) DjProgramDetail(query map[string]interface{}) map[string]interface{} {
+	data := map[string]interface{}{
+		"id": query["id"],
 	}
 	options := map[string]interface{}{
 		"crypto": "weapi",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 	return request.CreateRequest(
-		"POST","https://music.163.com/weapi/dj/program/detail",
+		"POST", "https://music.163.com/weapi/dj/program/detail",
 		data,
 		options)
 }

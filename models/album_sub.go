@@ -1,26 +1,28 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
+
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
+
 // todo 测试
-func (m *MusicObain)AlbumSub(query map[string]interface{}) map[string]interface{}  {
+func (m *MusicObain) AlbumSub(query map[string]interface{}) map[string]interface{} {
 	if fmt.Sprintf("%v", query["t"]) == "1" {
 		query["t"] = "sub"
-	}else {
+	} else {
 		query["t"] = "unsub"
 	}
-	data := map[string]interface{} {
-		"id":query["id"],
+	data := map[string]interface{}{
+		"id": query["id"],
 	}
 	options := map[string]interface{}{
 		"crypto": "weapi",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 	return request.CreateRequest(
-		"POST","https://music.163.com/api/album/"+query["t"].(string),
+		"POST", "https://music.163.com/api/album/"+query["t"].(string),
 		data,
 		options)
 }

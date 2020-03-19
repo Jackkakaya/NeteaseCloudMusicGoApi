@@ -1,48 +1,49 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
+
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
 
-func (m *MusicObain)CommentDj(query map[string]interface{}) map[string]interface{}  {
-	data := map[string]interface{} {
-		"rid" : query["id"],
+func (m *MusicObain) CommentDj(query map[string]interface{}) map[string]interface{} {
+	data := map[string]interface{}{
+		"rid": query["id"],
 	}
-	if val,ok := query["limit"];ok{
+	if val, ok := query["limit"]; ok {
 		data["limit"] = val
-	}else {
+	} else {
 		data["limit"] = 20
 	}
-	if val,ok := query["offset"];ok{
+	if val, ok := query["offset"]; ok {
 		data["offset"] = val
-	}else {
+	} else {
 		data["offset"] = 0
 	}
-	if val,ok := query["before"];ok{
+	if val, ok := query["before"]; ok {
 		data["beforeTime"] = val
-	}else {
+	} else {
 		data["beforeTime"] = 0
 	}
 
-	if val,ok := query["cookie"];ok{
+	if val, ok := query["cookie"]; ok {
 		valMapper := val.(map[string]interface{})
 		valMapper["os"] = "pc"
 		query["cookie"] = valMapper
-	}else {
+	} else {
 		query["cookie"] = map[string]interface{}{
-			"os":"pc",
+			"os": "pc",
 		}
 	}
 
 	options := map[string]interface{}{
 		"crypto": "weapi",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 
 	return request.CreateRequest(
-		"POST","https://music.163.com/weapi/v1/resource/comments/A_DJ_1_"+fmt.Sprintf("%v",query["id"]) ,
+		"POST", "https://music.163.com/weapi/v1/resource/comments/A_DJ_1_"+fmt.Sprintf("%v", query["id"]),
 		data,
 		options)
 }

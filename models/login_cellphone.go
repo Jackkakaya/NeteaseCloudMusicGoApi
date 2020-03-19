@@ -1,42 +1,43 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/crypto"
-	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
 	"reflect"
+
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/crypto"
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
 
-func (m *MusicObain)LoginCellphone(query map[string]interface{}) map[string]interface{}  {
-	data := map[string]interface{} {
-		"phone" : query["phone"],
-		"countrycode" : query["countrycode"],
-		"password" : crypto.GetMd5Hex(fmt.Sprintf("%v",query["password"])),
-		"rememberLogin" : true,
+func (m *MusicObain) LoginCellphone(query map[string]interface{}) map[string]interface{} {
+	data := map[string]interface{}{
+		"phone":         query["phone"],
+		"countrycode":   query["countrycode"],
+		"password":      crypto.GetMd5Hex(fmt.Sprintf("%v", query["password"])),
+		"rememberLogin": true,
 	}
-	if val,err := query["cookie"];err==false{
+	if val, err := query["cookie"]; err == false {
 		query["cookie"] = map[string]interface{}{
-			"os":"pc",
+			"os": "pc",
 		}
-	}else {
-		if reflect.ValueOf(val).Kind() == reflect.Map{
+	} else {
+		if reflect.ValueOf(val).Kind() == reflect.Map {
 			val := val.(map[string]interface{})
 			val["os"] = "pc"
 			query["cookie"] = val
-		}else{
+		} else {
 			query["cookie"] = map[string]interface{}{
-				"os":"pc",
+				"os": "pc",
 			}
 		}
 	}
 	options := map[string]interface{}{
 		"crypto": "weapi",
-		"ua":"pc",
+		"ua":     "pc",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 	return request.CreateRequest(
-		"POST","https://music.163.com/weapi/login/cellphone",
+		"POST", "https://music.163.com/weapi/login/cellphone",
 		data,
 		options)
 }

@@ -1,10 +1,11 @@
 package models
 
 import (
-	"NeteaseCloudMusicGoApi/pkg/request"
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/Jackkakaya/NeteaseCloudMusicGoApi/pkg/request"
 )
 
 // 歌手分类
@@ -31,41 +32,41 @@ import (
    initial 取值 a-z/A-Z
 */
 
-func (m *MusicObain)ArtistList(query map[string]interface{}) map[string]interface{}  {
-	data := map[string]interface{} {
-		"total":true,
+func (m *MusicObain) ArtistList(query map[string]interface{}) map[string]interface{} {
+	data := map[string]interface{}{
+		"total": true,
 	}
-	if val,ok := query["limit"];ok{
+	if val, ok := query["limit"]; ok {
 		data["limit"] = val
-	}else {
+	} else {
 		data["limit"] = 30
 	}
-	if val,ok := query["offset"];ok{
+	if val, ok := query["offset"]; ok {
 		data["offset"] = val
-	}else {
+	} else {
 		data["offset"] = 0
 	}
-	if val,ok := query["cat"];ok{
+	if val, ok := query["cat"]; ok {
 		data["categoryCode"] = val
-	}else {
+	} else {
 		data["categoryCode"] = "1001"
 	}
-	if initial,ok := data["initial"];ok{
-		if val, err := strconv.Atoi(fmt.Sprintf("%v",initial)); err == nil{
+	if initial, ok := data["initial"]; ok {
+		if val, err := strconv.Atoi(fmt.Sprintf("%v", initial)); err == nil {
 			data["initial"] = val
-		}else {
-			data["initial"] = int(strings.ToUpper(fmt.Sprintf("%v",initial))[0])
+		} else {
+			data["initial"] = int(strings.ToUpper(fmt.Sprintf("%v", initial))[0])
 		}
-	}else {
+	} else {
 		data["initial"] = nil
 	}
 	options := map[string]interface{}{
 		"crypto": "weapi",
 		"cookie": query["cookie"],
-		"proxy": query["proxy"],
+		"proxy":  query["proxy"],
 	}
 	return request.CreateRequest(
-		"POST","https://music.163.com/weapi/artist/list",
+		"POST", "https://music.163.com/weapi/artist/list",
 		data,
 		options)
 }
