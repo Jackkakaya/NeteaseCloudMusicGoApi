@@ -7,6 +7,7 @@ go版本网易云音乐api
 ## 使用
 
 ```
+$ go get github.com/Jackkakaya/NeteaseCloudMusicGoApi
 $ go run app.go
 ```
 
