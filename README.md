@@ -10,6 +10,11 @@ go版本网易云音乐api
 $ go get github.com/Jackkakaya/NeteaseCloudMusicGoApi
 $ go run app.go
 ```
+## 使用文档
+
+[文档地址](https://binaryify.github.io/NeteaseCloudMusicApi)
+
+![文档](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/docs.png)
 
 ## 功能特性
 
@@ -158,11 +163,6 @@ $ go run app.go
 143. 电台付费精品榜
 144. 歌手热门50首歌曲
 
-## 使用文档
-
-[文档地址](https://binaryify.github.io/NeteaseCloudMusicApi)
-
-![文档](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/docs.png)
 
 ## License
 
