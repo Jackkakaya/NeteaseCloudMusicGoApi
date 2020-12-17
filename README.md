@@ -10,7 +10,7 @@ go版本网易云音乐api
 $ git clone https://github.com/Jackkakaya/NeteaseCloudMusicGoApi
 $ cd NeteaseCloudMusicGoApi
 $ go mod download
-$ go run app.gp
+$ go run app.go
 ```
 ## 使用文档
 
