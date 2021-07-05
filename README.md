@@ -1,5 +1,8 @@
 # NeteaseCloudGoApi
 go版本网易云音乐api
+目前还有一些模块缺失，欢迎大家提pr一块完善项目。基础组件已经完善，移植模块非常简单，只用针对一个path:aa/bb/cc 写一个aa_bb_cc.go文件，具体逻辑可以翻译node版本。
+![image](https://user-images.githubusercontent.com/47767975/124433847-c5095e80-dda5-11eb-8504-ea0f83ab31a3.png)
+非常适合第一次参与开源项目新手。
 
 ## 移植自
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
